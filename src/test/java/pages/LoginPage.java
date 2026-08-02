@@ -22,6 +22,8 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
+    }
+
     public void enterUsername(String username) {
         usernameInput.sendKeys(username);
     }
