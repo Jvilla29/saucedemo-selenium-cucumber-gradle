@@ -22,8 +22,12 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        suites file('src/test/resources/testng.xml')
+    }
+    
     testLogging {
-        events "passed", "skipped", "failed"
+        events "passed", "skipped", "failed", "standard_out", "standard_error"
+        showStandardStreams = true
     }
 }
