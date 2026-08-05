@@ -5,22 +5,18 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.LoginPage;
 
 public class LoginSteps {
 
-    WebDriver driver;
-    LoginPage loginPage;
+    WebDriver driver = Hooks.getDriver();
+    LoginPage loginPage = new LoginPage(driver);
 
     @Given("the user is on the SauceDemo login page")
     public void the_user_is_on_the_sauce_demo_login_page() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
 
-        loginPage = new LoginPage(driver);
+        driver.get("https://www.saucedemo.com/");
     }
 
     @When("the user enters the username {string} and password {string}")
@@ -39,6 +35,5 @@ public class LoginSteps {
     public void the_user_should_be_redirected_to_the_inventory_page() {
         String actualUrl = driver.getCurrentUrl();
         Assert.assertTrue(actualUrl.contains("inventory"));
-        driver.quit();
     }
 }
