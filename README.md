@@ -3,6 +3,10 @@
 ## 📖 Description
 This repository features a robust web automation test framework designed for the **SauceDemo** (Swag Labs) platform. The project focuses on automating critical end-to-end (E2E) business flows, ensuring application stability, and providing fast feedback loops through a Behavior-Driven Development (BDD) approach.
 
+## 🎯 Target Application
+* **Website:** [Swag Labs (SauceDemo)](https://www.saucedemo.com/)
+* **Description:** A sample e-commerce web application provided by Sauce Labs for testing purposes. User credentials for the automation flow are standard sandbox accounts.
+
 ## 🛠️ Tech Stack & Architecture
 This framework is built using industry standard tools and best-practice design patterns:
 
