@@ -56,3 +56,6 @@ Thumbs.db
 
 bin/
 target/
+.gradle/
+build/
+bin/
