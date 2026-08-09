@@ -38,12 +38,12 @@ The project follows a modular architecture to separate test logic from page mech
 * `src/test/java/runners`: TestNG execution runners configured for Cucumber features.
 * `src/test/resources/features`: `.feature` files written in Gherkin syntax defining the business behavior.
 
-Markdown
 ## ⚙️ Setup and Execution
 
 ### Prerequisites
 * Java JDK 11 or higher installed.
 * Google Chrome installed (Selenium Manager automatically handles driver management).
+* Git installed.
 
 ### How to Run the Tests
 1. Clone this repository:
@@ -56,13 +56,13 @@ cd saucedemo-selenium-cucumber-gradle
 
 Run the test suite via Gradle:
 Bash
-./gradlew test
+gradle clean test
 
 📊 Test Reports
-After a successful (or failed) test execution, the automation framework generates detailed HTML reports. You can find the default Gradle test report navigating to:
+After a successful (or failed) test execution, the automation framework generates a detailed HTML report using Cucumber, which includes embedded screenshots of every executed step for visual validation.
 
-build/reports/tests/test/index.html
+You can view the results by opening the following file in your preferred web browser:
 
-(Note: Cucumber or Allure reports can be integrated in the future for richer BDD visual reporting).
+target/cucumber-reports.html
 
 Author: Jvilla29 - Automation QA Engineer
