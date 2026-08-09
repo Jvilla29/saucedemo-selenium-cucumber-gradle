@@ -20,4 +20,11 @@ public class CartPage {
     public boolean isBackpackInCart() {
         return backpackItemName.isDisplayed();
     }
+
+    @FindBy(id = "checkout")
+    private WebElement checkoutButton;
+
+    public void clickCheckout() {
+        checkoutButton.click();
+    }
 }

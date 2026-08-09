@@ -5,6 +5,10 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import java.time.Duration;
 
@@ -33,6 +37,15 @@ public class Hooks {
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+        }
+    }
+
+    @AfterStep
+    public void addScreenshot(Scenario scenario) {
+        if (driver != null) {
+            final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+            scenario.attach(screenshot, "image/png", "Step Screenshot");
         }
     }
 
