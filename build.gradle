@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    // --- EXISTING DEPENDENCIES (DO NOT REMOVE) ---
+    
     // Selenium WebDriver for browser automation
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
 
@@ -19,6 +21,11 @@ dependencies {
     // Cucumber dependencies for BDD (Gherkin syntax)
     testImplementation 'io.cucumber:cucumber-java:7.18.0'
     testImplementation 'io.cucumber:cucumber-testng:7.18.0'
+
+    // --- NEW DEPENDENCY ---
+    
+    // Playwright for fast and reliable browser automation
+    implementation 'com.microsoft.playwright:playwright:1.41.0'
 }
 
 test {
@@ -30,4 +37,10 @@ test {
         events "passed", "skipped", "failed", "standard_out", "standard_error"
         showStandardStreams = true
     }
+
+    task installPlaywright(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.microsoft.playwright.CLI'
+    args = ['install']
+}
 }
