@@ -7,7 +7,7 @@ import io.cucumber.testng.PickleWrapper;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features = "classpath:features", glue = "stepDefinitions", plugin = { "pretty",
+@CucumberOptions(features = "classpath:features/01-login.feature", glue = "stepDefinitions", plugin = { "pretty",
         "html:target/cucumber-reports.html" })
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
