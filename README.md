@@ -72,5 +72,3 @@ You can view the results by opening the following file in your preferred web bro
 target/cucumber-reports.html
 
 Author: Jvilla29 - Automation QA Engineer
-
-Author: Jvilla29 - Automation QA Engineer
